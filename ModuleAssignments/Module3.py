@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import os
 
 # PAGE CONFIGURATION
 st.set_page_config(
@@ -14,7 +15,8 @@ st.markdown(
 )
 
 # LOAD DATASET
-df = pd.read_csv("Salary_dataset.csv")
+base_dir = os.path.dirname(__file__)
+df = pd.read_csv(os.path.join(base_dir, "Salary_dataset.csv"))
 
 # DESCRIPTION
 st.subheader("Dataset Description")
