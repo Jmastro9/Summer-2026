@@ -26,7 +26,7 @@ st.subheader("Filters")
 
 # COLUMN DROPDOWN
 column = st.selectbox(
-    "Select a Column",
+    "Select a column to filter.",
     df.columns
 )
 
@@ -37,7 +37,7 @@ if df[column].dtype != "object":
     max_value = int(df[column].max())
 
     value_range = st.slider(
-        "Select a Range",
+        "Select values to filter the desired column.",
         min_value,
         max_value,
         (min_value, max_value)
@@ -52,7 +52,7 @@ else:
     filtered_df = df
 
 # COLUMN SELECTION
-st.write("Select Columns to Display")
+st.write("Select which columns to display.")
 
 selected_columns = []
 
