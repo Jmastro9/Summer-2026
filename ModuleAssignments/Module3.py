@@ -62,4 +62,10 @@ for i, col_name in enumerate(df.columns):
             selected_columns.append(col_name)
 
 # DISPLAY DATA
+st.subheader("Dataset")
 st.dataframe(filtered_df[selected_columns])
+
+# SUMMARY STATISTICS
+st.subheader("Summary Statistics")
+numeric_df = filtered_df.select_dtypes(include=["int64", "float64"])
+st.dataframe(numeric_df.describe())
