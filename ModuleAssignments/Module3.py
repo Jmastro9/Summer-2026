@@ -61,6 +61,8 @@ for i, col_name in enumerate(df.columns):
         if st.checkbox(col_name, value=True):
             selected_columns.append(col_name)
 
+filtered_df = filtered_df[selected_columns]
+
 # DISPLAY DATA
 st.subheader("Dataset")
 st.dataframe(filtered_df[selected_columns])
