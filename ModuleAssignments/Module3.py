@@ -22,6 +22,8 @@ df = pd.read_csv(os.path.join(base_dir, "Salary_dataset.csv"))
 st.subheader("Dataset Description")
 st.text("Salary Dataset in CSV for Simple linear regression. It contains 30 rows, each having an entry number, number of years of experience, and a salary column.")
 
+st.subheader("Filters")
+
 # COLUMN DROPDOWN
 column = st.selectbox(
     "Select a Column",
@@ -50,7 +52,7 @@ else:
     filtered_df = df
 
 # COLUMN SELECTION
-st.subheader("Select Columns to Display")
+st.write("Select Columns to Display")
 
 selected_columns = []
 
@@ -64,10 +66,10 @@ for i, col_name in enumerate(df.columns):
 filtered_df = filtered_df[selected_columns]
 
 # DISPLAY DATA
-st.subheader("Dataset")
+st.subheader("Data Table")
 st.dataframe(filtered_df[selected_columns])
 
 # SUMMARY STATISTICS
-st.subheader("Summary Statistics")
+st.subheader("Summary Statistics Table")
 numeric_df = filtered_df.select_dtypes(include=["int64", "float64"])
 st.dataframe(numeric_df.describe())
