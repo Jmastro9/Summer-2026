@@ -33,8 +33,8 @@ column = st.selectbox(
 # SLIDER FILTER
 if df[column].dtype != "object":
 
-    min_value = int(df[column].min())
-    max_value = int(df[column].max())
+    min_value = float(df[column].min())
+    max_value = float(df[column].max())
 
     value_range = st.slider(
         "Select values to filter the desired column.",
